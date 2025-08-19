@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dini Nurelmi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-muda': '#fce4ec',
+                        'pink-medium': '#f8bbd0',
+                        'pink-tua': '#f48fb1',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in forwards',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+        AOS.init();
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full bg-pink-tua flex items-center justify-center">
+                <img src="dini.jpg" alt="Dini Nurelmi" class="rounded-full w-10 h-10">
+                </div>
+                <h1 class="ml-3 text-xl font-bold text-pink-tua">Dini Nurelmi</h1>
+            </div>
+            
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="text-gray-700 hover:text-pink-tua transition">Tentang Saya</a></li>
+                    <li><a href="#experience" class="text-gray-700 hover:text-pink-tua transition">Pengalaman</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-pink-tua transition">Pendidikan</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-pink-tua transition">Keahlian</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-pink-tua transition">Project</a></li>
+                    <li><a href="#certificates" class="text-gray-700 hover:text-pink-tua transition">Sertifikat</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger-menu md:hidden">
+                <button id="menu-toggle" class="text-pink-tua">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="nav-menu">
+            <button class="close-menu text-pink-tua">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <ul class="px-8 space-y-6">
+                <li><a href="#about" class="block py-2 text-gray-700 hover:text-pink-tua transition">Tentang Saya</a></li>
+                <li><a href="#experience" class="block py-2 text-gray-700 hover:text-pink-tua transition">Pengalaman</a></li>
+                <li><a href="#education" class="block py-2 text-gray-700 hover:text-pink-tua transition">Pendidikan</a></li>
+                <li><a href="#skills" class="block py-2 text-gray-700 hover:text-pink-tua transition">Keahlian</a></li>
+                <li><a href="#projects" class="block py-2 text-gray-700 hover:text-pink-tua transition">Project</a></li>
+                <li><a href="#certificates" class="block py-2 text-gray-700 hover:text-pink-tua transition">Sertifikat</a></li>
+                <li class="pt-8">
+                    <div class="flex space-x-4">
+                        <a href="mailto:nurelmidini@gmail.com" class="text-pink-tua"><i class="fab fa-google text-xl"></i></a>
+                        <a href="https://wa.me/6282320848558" class="text-pink-tua"><i class="fab fa-whatsapp text-xl"></i></a>
+                        <a href="#" class="text-pink-tua"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-pink-tua"><i class="fab fa-instagram text-xl"></i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-pink-muda to-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Hai, Saya <span class="text-pink-tua">Dini Nurelmi</span></h1>
+                <p class="text-xl text-gray-600 mb-6">Lulusan SMK Jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-pink-tua text-white px-6 py-3 rounded-full hover:bg-pink-medium transition shadow-lg flex items-center">
+                        <i class="fas fa-envelope mr-2"></i> Hubungi Saya
+                    </a>
+                    <a href="#projects" class="border-2 border-pink-tua text-pink-tua px-6 py-3 rounded-full hover:bg-pink-tua hover:text-white transition flex items-center">
+                        <i class="fas fa-laptop-code mr-2"></i> Project Saya
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center animate-float">
+                <div class="relative">
+                    <div class="bg-pink-tua w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center">
+                        <div class="bg-white w-60 h-60 md:w-76 md:h-76 rounded-full overflow-hidden border-4 border-pink-tua">
+                            <div class="bg-gray-200 rounded-xl w-full h-full flex items-center justify-center text-gray-500">
+                                 <img src="dini.jpg" alt="Dhine Nurelmi" class="w-100 h-100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-xl">
+                        <div class="bg-pink-medium w-16 h-16 rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">TJKT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Tentang Saya</h2>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h3 class="text-xl font-semibold text-pink-tua mb-4">Ringkasan Profesional</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Lulusan SMK Jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT) dengan keahlian dalam instalasi dan konfigurasi. 
+                        Memiliki pengalaman magang di LKP serta terbiasa memberikan pelatihan komputer dasar (Microsoft Office, Internet, dan Email). 
+                        Melakukan perawatan, perbaikan perangkat komputer dan membantu proses rakit komputer sesuai kebutuhan pelanggan. 
+                        Memiliki kemampuan manajemen waktu, kerja sama tim dan pelayanan pelanggan yang baik.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-pink-muda flex items-center justify-center mr-4">
+                                <i class="fas fa-user-graduate text-pink-tua"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Pendidikan</h4>
+                                <p class="text-gray-600">SMK Negeri 1 Padaherang</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-pink-muda flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-pink-tua"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Pengalaman</h4>
+                                <p class="text-gray-600">Instruktur & Teknisi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-pink-muda flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-pink-tua"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Lokasi</h4>
+                                <p class="text-gray-600">Padaherang, Jawa Barat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-pink-muda flex items-center justify-center mr-4">
+                                <i class="fas fa-language text-pink-tua"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Bahasa</h4>
+                                <p class="text-gray-600">Indonesia, Sunda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-xl font-semibold text-pink-tua mb-4">Kontak Saya</h3>
+                    <div class="bg-pink-muda rounded-2xl p-6 shadow-lg">
+                        <div class="mb-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <a href="mailto:nurelmidini@gmail.com" class="text-gray-700 hover:text-pink-tua">nurelmidini@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">WhatsApp</h4>
+                                <a href="https://wa.me/6282320848558" class="text-gray-700 hover:text-pink-tua">0823-2084-8558</a>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                                <i class="fab fa-facebook text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Facebook</h4>
+                                <a href="#" class="text-gray-700 hover:text-pink-tua">Dini Nurelmi</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                                <i class="fab fa-instagram text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Instagram</h4>
+                                <a href="#" class="text-gray-700 hover:text-pink-tua">@dininrlmi_</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-pink-muda">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Pengalaman Kerja</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-8">
+                    <div class="timeline-item">
+                        <span class="text-sm font-semibold bg-pink-tua text-white px-3 py-1 rounded-full">Magang</span>
+                        <h3 class="text-xl font-bold mt-2 text-gray-800">LKP Technospot Computer</h3>
+                        <p class="text-pink-tua font-medium">Instruktur Kursus Komputer & Teknisi Komputer | November 2025 – Februari 2025</p>
+                        
+                        <div class="mt-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Tanggung Jawab:</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Mengajar materi dasar komputer (Microsoft Office, internet, dan sistem operasi) kepada peserta dari berbagai kalangan</li>
+                                <li>Membimbing peserta kursus dalam memahami penggunaan aplikasi produktivitas (Word, Excel, PowerPoint) secara praktis</li>
+                                <li>Melakukan instalasi software dan perawatan perangkat komputer laboratorium</li>
+                                <li>Memberikan layanan konsultasi dasar kepada siswa terkait masalah komputer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mt-6 bg-pink-muda p-4 rounded-xl">
+                            <h4 class="font-semibold text-pink-tua mb-2">Prestasi:</h4>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li>Berhasil membantu lebih dari 50 peserta kursus memahami dasar penggunaan komputer dan aplikasi Microsoft Office</li>
+                                <li>Melakukan perawatan rutin (maintenance) komputer sehingga mengurangi kerusakan perangkat hingga 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Education Section -->
+    <section id="education" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Pendidikan</h2>
+            
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-pink-muda rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">SMK Negeri 1 Padaherang</h3>
+                            <p class="text-pink-tua font-medium">2023 - 2026</p>
+                            <p class="mt-2 text-gray-600">Jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-pink-muda rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                            <i class="fas fa-school text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">MTs Darul Istiqomah</h3>
+                            <p class="text-pink-tua font-medium">2020 - 2023</p>
+                            <p class="mt-2 text-gray-600">Sekolah Menengah Pertama</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-pink-muda rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                            <i class="fas fa-book text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">SD Negeri 2 Karangmulya</h3>
+                            <p class="text-pink-tua font-medium">2014 - 2020</p>
+                            <p class="mt-2 text-gray-600">Sekolah Dasar</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-pink-muda rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-16 h-16 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                            <i class="fas fa-child text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Paud Al-Hidayah</h3>
+                            <p class="text-pink-tua font-medium">2013 - 2014</p>
+                            <p class="mt-2 text-gray-600">Pendidikan Anak Usia Dini</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-pink-muda">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Keahlian</h2>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Keahlian Teknis</h3>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Instalasi & Konfigurasi Jaringan</span>
+                                <span class="text-pink-tua font-medium">Menengah</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Troubleshooting Hardware & Software</span>
+                                <span class="text-pink-tua font-medium">Dasar</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Mikrotik RouterOS</span>
+                                <span class="text-pink-tua font-medium">Menengah</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Microsoft Office</span>
+                                <span class="text-pink-tua font-medium">Menengah</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Keahlian Lainnya</h3>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Manajemen Waktu</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Kerja Sama Tim</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Pelayanan Pelanggan</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Instalasi Komputer</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Pelatihan Komputer</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Perawatan Hardware</span>
+                        <span class="bg-pink-muda text-pink-tua px-4 py-2 rounded-full">Perbaikan Komputer</span>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-gray-800 mt-6 mb-4">Bahasa</h3>
+                    <div class="flex space-x-4">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-pink-tua mr-2"></span>
+                            <span>Indonesia (Aktif)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-pink-tua mr-2"></span>
+                            <span>Sunda (Aktif)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Project</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="project-card bg-pink-muda rounded-2xl overflow-hidden shadow-lg">
+                    <div class="md:flex">
+                        <div class="md:w-2/5 bg-gray-200 border-2 border-dashed flex items-center justify-center p-8">
+                            <i class="fas fa-microchip text-6xl text-pink-tua"></i>
+                        </div>
+                        <div class="md:w-3/5 p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Sistem Absensi Online Berbasis IoT</h3>
+                            <p class="text-gray-600 mb-4">
+                                Membangun sistem absensi online menggunakan NodeMCU dan platform Blynk IoT. 
+                                Proyek ini meningkatkan efisiensi pencatatan absensi dengan memanfaatkan teknologi IoT.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-pink-tua text-white px-3 py-1 rounded-full text-sm">IoT</span>
+                                <span class="bg-pink-tua text-white px-3 py-1 rounded-full text-sm">NodeMCU</span>
+                                <span class="bg-pink-tua text-white px-3 py-1 rounded-full text-sm">Blynk</span>
+                                <span class="bg-pink-tua text-white px-3 py-1 rounded-full text-sm">Absensi</span>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg">
+                                <h4 class="font-semibold text-pink-tua mb-2">Hasil & Prestasi:</h4>
+                                <p class="text-gray-700">Berhasil mempercepat proses rekap absensi guru hingga 70% dan mendapatkan apresiasi dari pihak sekolah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-16 bg-pink-muda">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center section-title">Sertifikat</h2>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 rounded-full bg-pink-tua flex items-center justify-center mr-4">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Mikrotik Certified Network Associate (MTCNA)</h3>
+                            <p class="text-pink-tua font-medium">2026</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 flex justify-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-40 flex items-center justify-center">
+                            <i class="fas fa-image text-5xl text-pink-medium"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-tua text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-3">Dini Nurelmi</h3>
+                    <p class="text-pink-100">Lulusan SMK TJKT dengan spesialisasi instalasi jaringan dan perangkat komputer</p>
+                </div>
+                
+                <div id="contact" class="text-center md:text-right">
+                    <h4 class="font-semibold mb-3">Hubungi Saya</h4>
+                    <div class="flex space-x-4 justify-center md:justify-end">
+                        <a href="mailto:nurelmidini@gmail.com" class="text-white hover:text-pink-200">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/6282320848558" class="text-white hover:text-pink-200">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-pink-200">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-pink-200">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-pink-400 pt-8 text-center">
+                <p class="text-pink-100">© 2025 Dini Portfolio All rights reserved.</p>
+                <div class="space-x-4 text-xs text-pink-200"><span>by Nazril Acil Innovations</span><span>•</span><span>Version 1.1.0</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
