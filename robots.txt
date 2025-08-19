@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap lokasi
+Sitemap: https://dini-nurelmi.vercel.app/sitemap.xml
